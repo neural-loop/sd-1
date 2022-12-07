@@ -25,6 +25,5 @@ for filename in os.listdir("/tmp/samples_resized"):
   '  --precision autocast '\
   '  --outdir /tmp/img2img '
   i = i+1
-
-subprocess.check_output('python scripts/img2img.py ' + script_args, shell=True).decode('utf-8')
+  subprocess.check_output('python scripts/img2img.py ' + script_args, shell=True).decode('utf-8')
 
