@@ -20,11 +20,11 @@ for i, filename in enumerate(filenames):
     ' --n_iter 1 '\
     ' --scale 7.5 '\
     ' --strength 0.45 '\
-   f' --prompt {prompt} '\
+   f' --prompt \'{prompt}\' '\
    f' --ckpt /var/meadowrun/machine_cache/{model_name} '\
     ' --seed 1979 '\
     ' --precision autocast '\
     ' --outdir /tmp/outputs/img2img '
 
-subprocess.check_output('python scripts/txt2img.py ' + script_args, shell=True).decode('utf-8')
+subprocess.check_output('python scripts/img2img.py ' + script_args, shell=True).decode('utf-8')
 
