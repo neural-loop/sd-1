@@ -3,10 +3,9 @@ import subprocess
 model_name = 'v1-5-pruned-emaonly.ckpt'
 s3_bucket_name = "visioninit-sd"  # replace this with your own bucket name!
 
+# check variables for alphanumeric with dashes and underscores and periods
+assert all(c.isalnum() or c in ['-', '_', '.'] for c in model_name)
 
-# assert model_name.isalnum() and model_name.endswith(".ckpt")
-# assert s3_bucket_name.isalnum() and s3_bucket_name.endswith("-sd")
-# print('xss checks done')
 
 script_args = ' --skip_grid ' \
   ' --ddim_steps 30 '\
@@ -21,12 +20,5 @@ script_args = ' --skip_grid ' \
   ' --precision autocast '\
   ' --outdir /tmp/outputs '
 
-# print current directory
-# print('current directory: ', subprocess.check_output('pwd', shell=True).decode('utf-8'))
-# print('current directory: ', subprocess.check_output('ls scripts', shell=True).decode('utf-8'))
-# run python scripts/txt2img.py to create images from text files
-
-#  foreach script_args in script_args_list add to subprocess command as flags
 subprocess.check_output('python scripts/txt2img.py ' + script_args, shell=True).decode('utf-8')
-# subprocess.call(['python', 'scripts/txt2img.py',f'{script_args}'])
 
