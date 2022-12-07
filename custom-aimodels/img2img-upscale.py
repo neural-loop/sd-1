@@ -21,4 +21,3 @@ f' --ckpt /var/meadowrun/machine_cache/{model_name} '\
 '  --outdir /tmp/img2img '
 
 subprocess.check_output('python scripts/img2img.py ' + script_args, shell=True).decode('utf-8')
-
