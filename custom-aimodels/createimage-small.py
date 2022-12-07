@@ -13,10 +13,10 @@ script_args = ' --skip_grid ' \
   ' --W 576 '\
   ' --n_samples 1 '\
   ' --n_iter 1 '\
-  ' --scale 15 '\
+  ' --scale 8 '\
   ' --from-file /var/meadowrun/machine_cache/prompts.txt '\
  f' --ckpt /var/meadowrun/machine_cache/{model_name} '\
-  ' --seed 13371 '\
+  ' --seed 1331 '\
   ' --precision autocast '\
   ' --outdir /tmp/outputs '
 

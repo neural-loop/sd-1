@@ -9,14 +9,14 @@ assert all(c.isalnum() or c in ['-', '_', '.'] for c in model_name)
 
 # get the line from prompts.txt that corresponds to the current filename
 script_args = ' --skip_grid ' \
-'  --ddim_steps 130 '\
+'  --ddim_steps 400 '\
 '  --n_samples 1 '\
 '  --n_iter 1 '\
 '  --scale 8 '\
 '  --strength 0.45 '\
 f' --from-folder /tmp/samples_resized/ '\
 f' --ckpt /var/meadowrun/machine_cache/{model_name} '\
-'  --seed 13371 '\
+'  --seed 1331 '\
 '  --precision full '\
 '  --outdir /tmp/img2img '
 
