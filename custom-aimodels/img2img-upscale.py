@@ -23,7 +23,7 @@ for filename in os.listdir("/tmp/samples_resized"):
   f' --ckpt /var/meadowrun/machine_cache/{model_name} '\
   '  --seed 1337 '\
   '  --precision autocast '\
-  '  --outdir /tmp/outputs/img2img '
+  '  --outdir /tmp/img2img '
   i = i+1
 
 subprocess.check_output('python scripts/img2img.py ' + script_args, shell=True).decode('utf-8')
