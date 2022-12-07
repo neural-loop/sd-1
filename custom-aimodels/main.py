@@ -20,9 +20,9 @@ def main():
             '       --exclude "*" '
             f'      --include {model_name} '
             '       --include prompts.txt '
-            '&&  python custom-aimodels/createimage-small.py'
+            f'&&  python custom-aimodels/createimage-small.py {model_name}'
             '&&  python custom-aimodels/resize.py '
-            '&&  python custom-aimodels/img2img-upscale.py '
+            f'&&  python custom-aimodels/img2img-upscale.py {model_name}'
             f'&& aws s3 sync /tmp/ s3://{s3_bucket_name}/img/{model_name}/'
             f'\'',
             meadowrun.AllocCloudInstance("EC2"),

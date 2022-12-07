@@ -2,7 +2,6 @@ import subprocess
 import sys
 
 model_name = sys.argv[1]
-s3_bucket_name = sys.argv[2]
 
 script_args = ' --skip_grid ' \
   ' --ddim_steps 30 '\
