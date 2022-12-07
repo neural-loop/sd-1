@@ -23,8 +23,8 @@ script_args = ''\
   ' --outdir /tmp/outputs '
 
 # print current directory
-print('current directory: ', subprocess.check_output('pwd', shell=True).decode('utf-8'))
-print('current directory: ', subprocess.check_output('ls scripts', shell=True).decode('utf-8'))
+# print('current directory: ', subprocess.check_output('pwd', shell=True).decode('utf-8'))
+# print('current directory: ', subprocess.check_output('ls scripts', shell=True).decode('utf-8'))
 # run python scripts/txt2img.py to create images from text files
 subprocess.call(['python', 'scripts/txt2img.py',f'{script_args}'])
 
