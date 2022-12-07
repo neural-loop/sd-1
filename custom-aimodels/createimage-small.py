@@ -4,9 +4,9 @@ model_name = 'v1-5-pruned-emaonly.ckpt'
 s3_bucket_name = "visioninit-sd"  # replace this with your own bucket name!
 
 
-assert model_name.isalnum() and model_name.endswith(".ckpt")
-assert s3_bucket_name.isalnum() and s3_bucket_name.endswith("-sd")
-print('xss checks done')
+# assert model_name.isalnum() and model_name.endswith(".ckpt")
+# assert s3_bucket_name.isalnum() and s3_bucket_name.endswith("-sd")
+# print('xss checks done')
 
 script_args = ''\
   ' --skip_grid ' \
