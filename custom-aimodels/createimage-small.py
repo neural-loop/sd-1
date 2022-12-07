@@ -8,8 +8,7 @@ s3_bucket_name = "visioninit-sd"  # replace this with your own bucket name!
 # assert s3_bucket_name.isalnum() and s3_bucket_name.endswith("-sd")
 # print('xss checks done')
 
-script_args = ''\
-  ' --skip_grid ' \
+script_args = ' --skip_grid ' \
   ' --ddim_steps 30 '\
   ' --H 320 '\
   ' --W 576 '\
