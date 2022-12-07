@@ -234,7 +234,7 @@ def main():
         init_imgs = []
         for f in sorted(os.listdir(opt.from_folder)):
             if f.endswith(".png"):
-                init_imgs.append([f"{opt.from_folder}/{f}"])
+                init_imgs.append(f"{opt.from_folder}/{f}")
 
     sample_path = os.path.join(outpath, "samples")
     os.makedirs(sample_path, exist_ok=True)
