@@ -7,6 +7,6 @@ for filename in os.listdir("/tmp/outputs/samples"):
         im = Image.open("/tmp/outputs/samples/" + filename)
         imResize = im.resize((1024,576), Image.ANTIALIAS)
         # if samples_resized folder does not exist, create it
-        if not os.path.exists("/tmp/outputs/samples_resized"):
-            os.makedirs("/tmp/outputs/samples_resized")
+        if not os.path.exists("/tmp/samples_resized"):
+            os.makedirs("/tmp/samples_resized")
         imResize.save("/tmp/samples_resized/" + filename, 'PNG', quality=90)
