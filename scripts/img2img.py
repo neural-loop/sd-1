@@ -243,7 +243,7 @@ def main():
 
     iterated = 0
     for opt.init_img in init_imgs:
-        prompt = subprocess.check_output(f'head -n {i + 1} /var/meadowrun/machine_cache/prompts.txt | tail -n 1',
+        prompt = subprocess.check_output(f'head -n {iterated + 1} /var/meadowrun/machine_cache/prompts.txt | tail -n 1',
                                          shell=True).decode('utf-8')
         assert prompt is not None
         data = [batch_size * [prompt]]
