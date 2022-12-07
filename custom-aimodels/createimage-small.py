@@ -22,6 +22,8 @@ script_args = ''\
   ' --precision autocast '\
   ' --outdir /tmp/outputs '
 
+# print current directory
+print('current directory: ', subprocess.check_output('pwd', shell=True).decode('utf-8'))
 # run python scripts/txt2img.py to create images from text files
 subprocess.call(['python', f'../scripts/txt2img.py {script_args}'])
 
