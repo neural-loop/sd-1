@@ -6,6 +6,8 @@ s3_bucket_name = "visioninit-sd"  # replace this with your own bucket name!
 # check variables for alphanumeric with dashes and underscores and periods
 assert all(c.isalnum() or c in ['-', '_', '.'] for c in model_name)
 
+# print working directory
+print(subprocess.check_output('pwd', shell=True).decode('utf-8'))
 
 script_args = ' --skip_grid ' \
   ' --ddim_steps 30 '\
