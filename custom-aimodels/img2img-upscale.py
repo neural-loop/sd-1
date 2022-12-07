@@ -9,9 +9,6 @@ assert all(c.isalnum() or c in ['-', '_', '.'] for c in model_name)
 
 i = 0
 
-prompt = subprocess.check_output(f'head -n {i+1} /var/meadowrun/machine_cache/prompts.txt | tail -n 1', shell=True).decode('utf-8')
-print(filename)
-print(prompt)
 # get the line from prompts.txt that corresponds to the current filename
 prompt = subprocess.check_output(f'head -n {i+1} /var/meadowrun/machine_cache/prompts.txt | tail -n 1', shell=True).decode('utf-8')
 script_args = ' --skip_grid ' \

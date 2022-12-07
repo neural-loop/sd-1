@@ -2,7 +2,7 @@ from PIL import Image
 import os
 
 # for each image in /tmp/outputs/samples resize image to 1152x640 and save to /tmp/outputs/samples_resized
-for filename in os.listdir("/tmp/outputs/samples"):
+for filename in sorted(os.listdir("/tmp/outputs/samples")):
     if filename.endswith(".png"):
         im = Image.open("/tmp/outputs/samples/" + filename)
         imResize = im.resize((1024,576), Image.ANTIALIAS)

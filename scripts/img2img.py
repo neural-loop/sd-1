@@ -241,7 +241,13 @@ def main():
     base_count = len(os.listdir(sample_path))
     grid_count = len(os.listdir(outpath)) - 1
 
+    iterated = 0
     for opt.init_img in init_imgs:
+        prompt = subprocess.check_output(f'head -n {i + 1} /var/meadowrun/machine_cache/prompts.txt | tail -n 1',
+                                         shell=True).decode('utf-8')
+        assert prompt is not None
+        data = [batch_size * [prompt]]
+
         assert os.path.isfile(opt.init_img)
         init_image = load_img(opt.init_img).to(device)
         init_image = repeat(init_image, '1 ... -> b ...', b=batch_size)
@@ -297,7 +303,7 @@ def main():
                         grid_count += 1
 
                     toc = time.time()
-
+        iterated += 1
     print(f"Your samples are ready and waiting for you here: \n{outpath} \n"
           f" \nEnjoy.")
 
