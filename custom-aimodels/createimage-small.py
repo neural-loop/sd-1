@@ -18,5 +18,5 @@ script_args = ''\
   ' --outdir /tmp/outputs '
 
 # run python scripts/txt2img.py to create images from text files
-subprocess.call(['python', f'scripts/txt2img.py {script_args}'])
+subprocess.call(['python', f'../scripts/txt2img.py {script_args}'])
 
