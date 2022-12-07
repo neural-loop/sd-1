@@ -16,7 +16,7 @@ def main():
     asyncio.run(
         meadowrun.run_command(
             'bash -c \''
-            f'&& aws s3 sync s3://{s3_bucket_name} /var/meadowrun/machine_cache '
+            f'aws s3 sync s3://{s3_bucket_name} /var/meadowrun/machine_cache '
             '       --exclude "*" '
             f'      --include {model_name} '
             '       --include prompts.txt '
