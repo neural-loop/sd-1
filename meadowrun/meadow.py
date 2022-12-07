@@ -14,9 +14,11 @@ def main():
             f'      --include {model_name} '
             '       --include prompts.txt '
             '&& python custom-aimodels/createimage-small.py'
+            f'&& aws s3 sync /tmp/outputs/samples_resized/samples s3://{s3_bucket_name}/{model_name}/0/'
             '&& python custom-aimodels/resize.py '
+            f'&& aws s3 sync /tmp/samples_resized/samples s3://{s3_bucket_name}/{model_name}/1/'
             '&& python custom-aimodels/img2img-upscale.py '
-            f'&& aws s3 sync /tmp/outputs/img2img s3://{s3_bucket_name}/{model_name}/'
+            f'&& aws s3 sync /tmp/outputs/img2img/samples s3://{s3_bucket_name}/{model_name}/2/'
             f'\'',
             meadowrun.AllocCloudInstance("EC2"),
             meadowrun.Resources(

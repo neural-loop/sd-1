@@ -9,4 +9,4 @@ for filename in os.listdir("/tmp/outputs/samples"):
         # if samples_resized folder does not exist, create it
         if not os.path.exists("/tmp/outputs/samples_resized"):
             os.makedirs("/tmp/outputs/samples_resized")
-        imResize.save("/tmp/outputs/samples_resized/" + filename, 'PNG', quality=90)
+        imResize.save("/tmp/samples_resized/" + filename, 'PNG', quality=90)

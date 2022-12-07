@@ -7,7 +7,7 @@ s3_bucket_name = "visioninit-sd"  # replace this with your own bucket name!
 assert all(c.isalnum() or c in ['-', '_', '.'] for c in model_name)
 
 # put each filename from /tmp/outputs/samples_resized/ into array
-filenames = subprocess.check_output('ls -1 /tmp/outputs/samples_resized/', shell=True).decode('utf-8').splitlines()
+filenames = subprocess.check_output('ls -1 /tmp/samples_resized/samples/', shell=True).decode('utf-8').splitlines()
 
 # iterate through filenames with counter
 for i, filename in enumerate(filenames):
