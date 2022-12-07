@@ -10,7 +10,6 @@ assert all(c.isalnum() or c in ['-', '_', '.'] for c in model_name)
 i = 0
 
 # get the line from prompts.txt that corresponds to the current filename
-prompt = subprocess.check_output(f'head -n {i+1} /var/meadowrun/machine_cache/prompts.txt | tail -n 1', shell=True).decode('utf-8')
 script_args = ' --skip_grid ' \
 '  --ddim_steps 90 '\
 f' --init-img /tmp/samples_resized/{filename} '\
@@ -18,7 +17,6 @@ f' --init-img /tmp/samples_resized/{filename} '\
 '  --n_iter 1 '\
 '  --scale 15 '\
 '  --strength 0.55 '\
-f' --prompt \'{prompt}\' '\
 f' --from-folder /tmp/samples_resized/ '\
 f' --ckpt /var/meadowrun/machine_cache/{model_name} '\
 '  --seed 13371 '\
