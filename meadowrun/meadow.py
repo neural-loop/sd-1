@@ -8,7 +8,8 @@ def main():
     asyncio.run(
         meadowrun.run_command(
             'bash -c \''
-            f'aws s3 sync s3://{s3_bucket_name} /var/meadowrun/machine_cache '
+            'nvidia-smi'
+            f'&& aws s3 sync s3://{s3_bucket_name} /var/meadowrun/machine_cache '
             '       --exclude "*" '
             f'      --include {model_name} '
             '       --include prompts.txt '
@@ -19,7 +20,7 @@ def main():
             f'\'',
             meadowrun.AllocCloudInstance("EC2"),
             meadowrun.Resources(
-                logical_cpu=1, memory_gb=8, max_eviction_rate=80, gpu_memory=10, flags="nvidia"
+                logical_cpu=1, memory_gb=8, max_eviction_rate=80, gpu_memory=20, flags="nvidia"
             ),
             meadowrun.Deployment.git_repo(
                 "https://github.com/visioninit/stable-diffusion",
