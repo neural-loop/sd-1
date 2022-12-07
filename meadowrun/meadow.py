@@ -12,6 +12,8 @@ def main():
             '       --exclude "*" '
             f'      --include {model_name} '
             '       --include prompts.txt '
+            '&& python custom-aimodels/createimage-small.py'
+            '&& python scripts/resize.py '
             '&& python scripts/txt2img.py '
             '       --skip_grid '
             '       --ddim_steps 30 '
@@ -25,8 +27,6 @@ def main():
             '       --seed 1337 '
             '       --precision autocast '
             '       --outdir /tmp/outputs '
-            '       --device cuda '
-            '&& python scripts/resize.py '
             f'&& aws s3 sync /tmp/outputs/samples_resized s3://{s3_bucket_name}/resized/{model_name}'
             f'\'',
             meadowrun.AllocCloudInstance("EC2"),
