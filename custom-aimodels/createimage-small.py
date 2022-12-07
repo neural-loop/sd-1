@@ -1,5 +1,3 @@
-import os
-import sys
 import subprocess
 
 model_name = 'v1-5-pruned-emaonly.ckpt'
