@@ -30,8 +30,8 @@ def main():
                 logical_cpu=1, memory_gb=8, max_eviction_rate=80, gpu_memory=16, flags="nvidia"
             ),
             meadowrun.Deployment.git_repo(
-                "https://github.com/visioninit/stable-diffusion",
-                branch="meadowrun",
+                "https://github.com/visioninit/sd-1",
+                branch="visioninit",
                 interpreter=meadowrun.CondaEnvironmentFile("environment.yaml", additional_software="awscli"),
                 environment_variables={"TRANSFORMERS_CACHE": "/var/meadowrun/machine_cache/transformers"}
             )
