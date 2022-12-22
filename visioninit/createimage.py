@@ -17,5 +17,6 @@ script_args = ' --skip_grid ' \
   ' --outdir /tmp/outputs '
 
 def main(model_name):
-  subprocess.check_output('python scripts/txt2img.py ' + script_args, shell=True).decode('utf-8')
+  subprocess.check_output('python scripts/txt2img.py ' + script_args, shell=True)
 
+# python scripts/txt2img.py --outdir . --prompt='cat' --ckpt ..\..\inputs\models\sd-v1-4.ckpt

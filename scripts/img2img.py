@@ -236,14 +236,14 @@ def main():
             if f.endswith(".png"):
                 init_imgs.append(f"{opt.from_folder}/{f}")
 
-    sample_path = os.path.join(outpath, "samples")
+    sample_path = os.path.join(outpath)
     os.makedirs(sample_path, exist_ok=True)
     base_count = len(os.listdir(sample_path))
     grid_count = len(os.listdir(outpath)) - 1
 
     iterated = 0
     for opt.init_img in init_imgs:
-        prompt = subprocess.check_output(f'head -n {iterated + 1} custom-aimodels/prompts.txt | tail -n 1',
+        prompt = subprocess.check_output(f'head -n {iterated + 1} ../../inputs/prompts.txt | tail -n 1',
                                          shell=True).decode('utf-8')
         print(prompt)
         assert prompt is not None
